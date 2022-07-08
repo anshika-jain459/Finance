@@ -1,0 +1,57 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Index
+{% endblock %}
+
+{% block main %}   <!--cash AND shares-->
+    <div class="container py-5 text-center">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th class="text-start">Symbol</th>
+                    <th class="text-start">Name</th>
+                    <th class="text-end">Shares</th>
+                    <th class="text-end">Current Price</th>
+                    <th class="text-end">Price@Bought</th>
+                    <th class="text-end">TOTAL</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for share in shares %}
+                {% if share["SUM(share)"] > 0 %}
+                    <tr>
+                        <td class="text-start">{{ share["symbol"] }}</td>
+                        <td class="text-start">{{ share["name"] }}</td>
+                        <td class="text-end">{{ share["SUM(share)"] }}</td>
+                        <td class="text-end">{{ share["latest_price"] | usd}}</td>
+                        <td class="text-end">{{ share["price"] | usd }}</td>
+                        <td class="text-end">{{ (share["SUM(share)"] * share["latest_price"]) | usd }}</td>
+                    </tr>
+                {% endif %}
+                {% endfor %}
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td class="border-0 fw-bold text-end" colspan="5">
+                        Cash
+                    </td>
+                    <td class="border-0 text-end">
+                        {% for current_cash in cash %}
+                            {{ current_cash["cash"] | usd }}
+                        {% endfor %}
+                    </td>
+                </tr>
+                <tr>
+                    <td class="border-0 fw-bold text-end" colspan="5">
+                        TOTAL
+                    </td>
+                    <td class="border-0 w-bold text-end">
+                        {{ sum | usd }}
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+
+{% endblock %}

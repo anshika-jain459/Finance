@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Buy
+{% endblock %}
+
+{% block main %}
+    <form action="/buy" method="post">
+        <div class="mb-3">
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="username" name="symbol" placeholder="Symbol" type="text">
+        </div>
+        <div class="mb-3">
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="shares" name="shares" placeholder="Shares" type="number" min="1"/>
+            <!-- <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="username" name="shares" placeholder="Shares" type="number" min="1"> -->
+        </div>
+        <!-- this thing can't handle the case of 2.00, but this is actual value -->
+        <button class="btn btn-primary" type="submit">Buy</button>
+    </form>
+{% endblock %}

@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    History
+{% endblock %}
+
+{% block main %}   <!--cash AND shares-->
+    <div class="container py-5 text-center">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th class="text-start">Symbol</th>
+                    <th class="text-end">Shares</th>
+                    <th class="text-end">Price</th>
+                    <th class="text-end">Transacted</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for share in shares %}
+                    <tr>
+                        <td class="text-start">{{ share["symbol"] }}</td>
+                        <td class="text-end">{{ share["share"] }}</td>
+                        <td class="text-end">{{ share["price"] | usd}}</td>
+                        <td class="text-end">{{ share["day"] }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+{% endblock %}

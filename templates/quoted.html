@@ -1,0 +1,9 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Quote
+{% endblock %}
+
+{% block main %}
+    A share of {{lookup["name"]}} ({{lookup["symbol"]}}) costs {{ lookup["price"] | usd }}.
+{% endblock %}
