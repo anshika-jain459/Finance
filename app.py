@@ -15,6 +15,19 @@ import datetime
 from helpers import apology, login_required, lookup, usd
 
 #history means to show at what price u bought the stocks so dont't change the the of price to latest price.
+# # added later
+# import urlparse
+# import psycopg2
+# urlparse.uses_netloc.append("postgres")
+# url = urlparse.urlparse(os.environ["DATABASE_URL"])
+# conn = psycopg2.connect(
+#  database=url.path[1:],
+#  user=url.username,
+#  password=url.password,
+#  host=url.hostname,
+#  port=url.port
+# )
+# till here
 
 # Configure application
 app = Flask(__name__)
@@ -32,7 +45,7 @@ Session(app)
 
 # Configure CS50 Library to use SQLite database
 #db = SQL("sqlite:///finance.db")
-db = SQL(os.environ["postgres://sdxsmclnwnfaeu:ab539de3db7ac0d1b104f0f95d155d4e580411df7efdebd5b0618b8d40797973@ec2-3-217-14-181.compute-1.amazonaws.com:5432/dcqrogit4sf4m4 "])
+db = SQL("postgres://sdxsmclnwnfaeu:ab539de3db7ac0d1b104f0f95d155d4e580411df7efdebd5b0618b8d40797973@ec2-3-217-14-181.compute-1.amazonaws.com:5432/dcqrogit4sf4m4 ")
 
 # Make sure API key is set
 # if not os.environ.get("API_KEY"):
