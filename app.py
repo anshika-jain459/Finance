@@ -44,8 +44,8 @@ app.config["SESSION_TYPE"] = "filesystem"
 Session(app)
 
 # Configure CS50 Library to use SQLite database
-#db = SQL("sqlite:///finance.db")
-db = SQL("postgres://sdxsmclnwnfaeu:ab539de3db7ac0d1b104f0f95d155d4e580411df7efdebd5b0618b8d40797973@ec2-3-217-14-181.compute-1.amazonaws.com:5432/dcqrogit4sf4m4 ")
+db = SQL("sqlite:///finance.db")
+# db = SQL("postgres://ufjsfevhqhfgnp:670931fd29c0d5a908b3e78a6b0bfe85f52de901f06e8f2e3f08bb732335a058@ec2-52-71-23-11.compute-1.amazonaws.com:5432/d4qmbdoq8c1ihv")
 
 # Make sure API key is set
 # if not os.environ.get("API_KEY"):
