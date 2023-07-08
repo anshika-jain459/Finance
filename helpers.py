@@ -1,6 +1,8 @@
+import csv
 import os
 import requests
 import urllib.parse
+import subprocess
 import uuid
 
 # I have added this
