@@ -88,3 +88,6 @@ webencodings==0.5.1
 websockets==10.3
 Werkzeug==2.1.2
 zopfli==0.2.1
+
+pytz==2013b
+pandas==0.19.0
