@@ -1,28 +1,28 @@
 # Finance
+This application is designed to provide users with a simulated stock trading experience. Users can register, log in, view real-time stock prices, buy and sell stocks, and manage their portfolio.
 
 #### Index Page
 ![Screenshot of a Index page](https://i.imgur.com/1zpDWIo.png)
 #### History Page
 ![Screenshot of a Transactions History page](https://i.imgur.com/5DGyPs4.png)
+#### History Page
+![Screenshot of a Transactions Selling page](https://i.postimg.cc/FFbnP8ww/C-50-Finance-Buy-Google-Chrome-15-07-2023-19-14-24.png)
 
 ## Technologies
 
 - Python
-
 - Flask with session authentication
-
 - SQL
-
-- HTML
-
+- HTML/CSS
 - Bootstrap
+- APIs
+- JavaScripts
 
-
-### Summary
+## Summary
 
 Finance is a web app that allows logged-in users to "buy" and "sell" stocks (with pretend money) as well as look up real stock quotes fetched from IEX API. Users can also view their stock portfolio transaction history.
 
-### How to Run
+## How to Run
 
 Clone this repository, navigate to the project and type the following commands:
 Activate a virtual environment: 'python3 -m venv .venv' then select the virtual environment as the active workspace
@@ -33,6 +33,7 @@ Run command 'flask run' to open on localhost
 When the finance site opens in your browser, register for a new account (upper right corner) to create your own stock portfolio
 Views
 
+## Features
 ### Register
 
 Allow a new user to register for an account, rendering an apology view if the form data is incomplete or if the username already exists in the database.
@@ -57,9 +58,23 @@ Allows the user to "sell" shares of any stock currently owned in their portfolio
 
 Displays a table summarizing the user's past transactions (all buys and sells). Each row in the table lists whether the stock was bought or sold, the stock's symbol, the buy/sell price, the number of shares, and the transaction's date/time.
 
-## Additional Changes
+### Additional Changes
 
 - Allows users to change their passwords.
 - Allows users to add additional cash to their account.
 - Allows users to buy more shares or sell shares of stocks.
 - Requires users’ passwords to have some number of letters, numbers, and/or symbols.
+
+## Usage
+- Register a new account or log in with your existing credentials.
+- Once logged in, you will be taken to the home page, where you can view your current portfolio, cash balance, and real-time stock data.
+- To buy stocks, enter the symbol and the number of shares you wish to purchase on the Buy page.
+- To sell stocks, enter the symbol and the number of shares you wish to sell on the Sell page.
+- The Transaction History page displays all your buy and sell activities.
+- Logout when you are done using the application.
+
+## Contributing
+Contributions are welcome! If you find any bugs or want to add new features, please create an issue or submit a pull request explaining the changes you propose.
+
+## License
+[MIT License](https://opensource.org/license/mit/)
